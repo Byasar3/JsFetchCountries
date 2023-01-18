@@ -1,7 +1,10 @@
 console.log("HI!");
 
 const getCountryByName = async (countryName) => {
+    
     // the initial fetch to the website, save as variable 'response'
+
+    console.log(countryName);
     const response = await fetch (`https://restcountries.com/v3.1/name/${countryName}`);
     // console.log(response);
     // the promise made to get the json and save it to variable jsonData
@@ -14,20 +17,23 @@ const getCountryByName = async (countryName) => {
     
     jsonData.forEach(country => {
     const content = document.createElement("p");
-    content.textContent = "Official name of country: "+ country.name.nativeName.tur.official + 
+    content.textContent = "Name of country: "+ country.name.common + 
     " Population of country: " + country.population;
     console.log(content);
 
     infoContainer.appendChild(content);
     
     console.log(infoContainer);
+    
+    document.getElementById("outputInfo").innerHTML = infoContainer;
+
     document.querySelector("body").appendChild(infoContainer);
     });
 
 
 }
 
-getCountryByName("turkey")
+
 
 
 

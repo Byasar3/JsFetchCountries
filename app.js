@@ -10,17 +10,17 @@ const getCountryByName = async (countryName) => {
 
     // making a container, which will be kept in a div
     // container will contain the name info of the country
-    const nameContainer = document.createElement("div"); 
+    const infoContainer = document.createElement("div"); 
     
     jsonData.forEach(country => {
-    const nameContent = document.createElement("p");
-    nameContent.textContent = country.name.common;
-    console.log(nameContent);
+    const content = document.createElement("p");
+    content.textContent = country.name.common + " " ;
+    console.log(content);
 
-    nameContainer.appendChild(nameContent);
+    infoContainer.appendChild(content);
     
-    console.log(nameContainer);
-    document.querySelector("body").appendChild(nameContainer);
+    console.log(infoContainer);
+    document.querySelector("body").appendChild(infoContainer);
     });
 
 

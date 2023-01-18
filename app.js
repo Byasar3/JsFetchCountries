@@ -6,7 +6,7 @@ const getCountryByName = async (countryName) => {
     // console.log(response);
     // the promise made to get the json and save it to variable jsonData
     const jsonData = await response.json();
-    // console.log(jsonData);
+    console.log(jsonData);
 
     // making a container, which will be kept in a div
     // container will contain the name info of the country
@@ -14,7 +14,8 @@ const getCountryByName = async (countryName) => {
     
     jsonData.forEach(country => {
     const content = document.createElement("p");
-    content.textContent = country.name.common + " " ;
+    content.textContent = "Official name of country: "+ country.name.nativeName.tur.official + 
+    " Population of country: " + country.population;
     console.log(content);
 
     infoContainer.appendChild(content);
